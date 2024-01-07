@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String name;
+		int income,x,tax;
+		System.out.print("Enter Your Name : ");
+		name = sc.nextLine();
+		System.out.print("Enter Your Income : ");
+		income = sc.nextInt();
+		
+		if (income<=250000) {
+			System.out.println("Name : " + name + " Tax : " + "No Tax");
+		}
+		else if (income > 250000 && income<=500000) {
+			x = income - 250000;
+			tax = (x*10)/100;
+			System.out.println("Name : " + name + " Tax : " + tax);
+		}
+		else if (income>500000 && income<=1000000) {
+			x = income - 500000;
+			tax = 30000 + ((x*20)/100);
+			System.out.println("Name : " + name + " Tax : " + tax);
+		}
+		else if (income >1000000) {
+			x = income - 1000000;
+			tax = 50000 + ((x*30)/100);
+			System.out.println("Name : " + name + " Tax : " + tax);
+		}
+	}
+
+}
